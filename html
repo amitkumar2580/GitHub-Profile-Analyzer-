@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GitHub Profile Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://github.githubassets.com/favicons/favicon.png"/>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>GitHub Profile Analyzer</h1>
+      <p>Enter a GitHub username to analyze their profile</p>
+    </header>
+
+    <div class="search-box">
+      <input type="text" id="username" placeholder="e.g. torvalds, gaearon, yyx990803" autocomplete="off"/>
+      <button id="analyzeBtn">Analyze</button>
+    </div>
+
+    <div id="loading" class="loading hidden">
+      <div class="spinner"></div>
+      <p>Fetching profile data...</p>
+    </div>
+
+    <div id="error" class="error hidden">
+      <p>User not found or API limit reached!</p>
+    </div>
+
+    <div id="profile" class="profile hidden">
+      <!-- Profile Card -->
+      <div class="profile-card">
+        <img id="avatar" src="" alt="Avatar" class="avatar"/>
+        <div class="info">
+          <h2 id="name"></h2>
+          <p id="login" class="login"></p>
+          <p id="bio" class="bio"></p>
+          <div class="stats">
+            <div class="stat">
+              <strong id="repos">0</strong>
+              <span>Repos</span>
+            </div>
+            <div class="stat">
+              <strong id="followers">0</strong>
+              <span>Followers</span>
+            </div>
+            <div class="stat">
+              <strong id="following">0</strong>
+              <span>Following</span>
+            </div>
+            <div class="stat">
+              <strong id="totalStars">0</strong>
+              <span>Stars</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid">
+        <!-- Languages -->
+        <div class="card">
+          <h3>Top Languages</h3>
+          <canvas id="langChart"></canvas>
+          <div id="langList" class="lang-list"></div>
+        </div>
+
+        <!-- Top Repos -->
+        <div class="card">
+          <h3>Most Starred Repos</h3>
+          <div id="topRepos"></div>
+        </div>
+      </div>
+
+      <!-- Contribution Graph -->
+      <div class="card full-width">
+        <h3>Contributions (Last Year)</h3>
+        <div class="contrib-graph">
+          <img id="contribImg" src="" alt="Contribution Graph"/>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
