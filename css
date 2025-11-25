@@ -1,0 +1,246 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  background: #0d1117;
+  color: #c9d1d9;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.8rem;
+  color: #58a6ff;
+  margin-bottom: 10px;
+}
+
+.header p {
+  color: #8b949e;
+  font-size: 1.1rem;
+}
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+
+.search-box input {
+  padding: 14px 20px;
+  width: 380px;
+  max-width: 100%;
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  background: #161b22;
+  color: white;
+  font-size: 16px;
+}
+
+.search-box input:focus {
+  outline: none;
+  border-color: #58a6ff;
+}
+
+.search-box button {
+  padding: 14px 30px;
+  background: #238636;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: #2ea043;
+}
+
+.hidden { display: none !important; }
+
+.loading, .error {
+  text-align: center;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #30363d;
+  border-top: 5px solid #58a6ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.profile-card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 30px;
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+  align-items: center;
+}
+
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #30363d;
+}
+
+.info h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.login {
+  color: #58a6ff;
+  font-size: 1.4rem;
+  margin: 8px 0;
+}
+
+.bio {
+  margin: 15px 0;
+  font-style: italic;
+  color: #8b949e;
+}
+
+.stats {
+  display: flex;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat strong {
+  display: block;
+  font-size: 1.8rem;
+  color: #58a6ff;
+}
+
+.stat span {
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 25px;
+}
+
+.card h3 {
+  margin-bottom: 20px;
+  color: #58a6ff;
+  font-size: 1.4rem;
+}
+
+.lang-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.lang-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.lang-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.contrib-graph img {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid #30363d;
+}
+
+#topRepos .repo {
+  padding: 15px 0;
+  border-bottom: 1px solid #30363d;
+}
+
+#topRepos .repo:last-child {
+  border-bottom: none;
+}
+
+.repo-name {
+  color: #58a6ff;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.repo-desc {
+  color: #8b949e;
+  font-size: 0.95rem;
+  margin: 5px 0;
+}
+
+.repo-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .profile-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .search-box {
+    flex-direction: column;
+  }
+  .search-box input {
+    width: 100%;
+  }
+}
